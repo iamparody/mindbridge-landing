@@ -188,11 +188,12 @@ h3 {
 
 .readiness-row span {
   color: var(--cream);
-  background: rgba(245, 237, 228, 0.08);
+  background: rgba(47, 38, 34, 0.48);
   border: 1px solid rgba(245, 237, 228, 0.18);
   padding: 9px 12px;
   border-radius: 999px;
   font-size: 13px;
+  backdrop-filter: blur(14px);
 }
 
 .hero-visual {

@@ -4,7 +4,7 @@ import './styles.css';
 
 const stats = [
   { value: 24, suffix: '/7', label: 'Emergency access' },
-  { value: 90, suffix: 's', label: 'Peer escalation window' },
+  { value: 2, suffix: ' min', label: 'Peer match window' },
   { value: 2, suffix: '', label: 'Free starter credits' },
   { value: 0, suffix: '', label: 'Identity exposure by default' },
 ];
@@ -28,7 +28,7 @@ const modules = [
   {
     kicker: 'Referral path',
     title: 'Bridge to qualified professionals',
-    body: 'When a user needs more than peer or AI support, MindBridge routes a structured therapist referral for human follow-up.',
+    body: 'When a user needs more than peer or AI support, PeerPal routes a structured therapist referral for human follow-up.',
   },
 ];
 
@@ -41,8 +41,8 @@ const safety = [
 
 const faqs = [
   {
-    q: 'Is MindBridge a medical service?',
-    a: 'No. MindBridge is a mental health support and referral platform. It does not diagnose, prescribe, or replace professional care.',
+    q: 'Is PeerPal a medical service?',
+    a: 'No. PeerPal is a mental health support and referral platform. It does not diagnose, prescribe, or replace professional care.',
   },
   {
     q: 'Why anonymity first?',
@@ -54,8 +54,17 @@ const faqs = [
   },
   {
     q: 'Why is it built for Kenya?',
-    a: 'MindBridge is shaped around local crisis resources, mobile-first access, familiar payment habits, and low-cost peer support that can work beyond major cities.',
+    a: 'PeerPal is shaped around local crisis resources, mobile-first access, familiar payment habits, and low-cost peer support that can work beyond major cities.',
   },
+];
+
+const screens = [
+  { src: '/screens/home.png', label: 'Home', alt: 'PeerPal home screen' },
+  { src: '/screens/peer.png', label: 'Peer support', alt: 'Peer support request screen' },
+  { src: '/screens/ai-chat.png', label: 'AI companion', alt: 'AI companion Mira chat' },
+  { src: '/screens/resources.png', label: 'Resources', alt: 'Mental health articles library' },
+  { src: '/screens/insights.png', label: 'My insights', alt: 'Mood calendar and check-in streak' },
+  { src: '/screens/sounds.png', label: 'Calming sounds', alt: 'Calming sounds player' },
 ];
 
 function useReveal() {
@@ -126,10 +135,10 @@ function CountUp({ value, suffix }) {
 
 function ProductPhone() {
   return (
-    <div className="phone-shell" aria-label="MindBridge product preview">
+    <div className="phone-shell" aria-label="PeerPal product preview">
       <div className="phone-top">
         <span>9:41</span>
-        <span>MindBridge</span>
+        <span>PeerPal</span>
       </div>
       <div className="mood-orb">
         <span className="orb-face"> calm </span>
@@ -150,7 +159,7 @@ function ProductPhone() {
 
 function SystemMap() {
   return (
-    <div className="system-map" aria-label="MindBridge care system diagram">
+    <div className="system-map" aria-label="PeerPal care system diagram">
       <div className="system-node center">User</div>
       <div className="system-node n1">AI companion</div>
       <div className="system-node n2">Peer help</div>
@@ -192,7 +201,7 @@ function App() {
         <div className="ambient ambient-two" />
 
         <nav className="nav hero-rise">
-          <div className="brand">MindBridge</div>
+          <div className="brand">PeerPal</div>
         </nav>
 
         <div className="hero-layout">
@@ -202,7 +211,7 @@ function App() {
               Mental health support that meets people before the waiting list.
             </h1>
             <p className="hero-text hero-rise delay-3">
-              MindBridge is a mobile-first platform for Kenya, combining anonymous peer support,
+              PeerPal is a mobile-first platform for Kenya, combining anonymous peer support,
               bounded AI companionship, structured self-care, professional referral, and emergency
               escalation in one safety-first system.
             </p>
@@ -210,6 +219,9 @@ function App() {
               {readiness.map((item) => (
                 <span key={item}>{item}</span>
               ))}
+            </div>
+            <div className="hero-cta hero-rise delay-5">
+              <a href="https://peer-pal.com" className="btn-primary">Open the app</a>
             </div>
           </div>
 
@@ -246,7 +258,7 @@ function App() {
         <div className="copy-stack" data-reveal>
           <p>
             Mental health support in Kenya remains expensive, concentrated in urban centres, and
-            difficult to seek without stigma. MindBridge is designed for the moment before formal
+            difficult to seek without stigma. PeerPal is designed for the moment before formal
             care becomes reachable.
           </p>
           <p>
@@ -279,7 +291,7 @@ function App() {
             <p className="eyebrow">Safety architecture</p>
             <h2>Safety is not a feature layer. It is the product logic.</h2>
             <p>
-              MindBridge treats care, privacy, and escalation as core infrastructure. Every high-risk
+              PeerPal treats care, privacy, and escalation as core infrastructure. Every high-risk
               path has an explicit handoff, log, or boundary.
             </p>
           </div>
@@ -299,7 +311,7 @@ function App() {
           <p className="eyebrow">Built for Kenya, shaped for scale</p>
           <h2>Private, familiar, and affordable support for everyday access.</h2>
           <p>
-            MindBridge is designed around how people already live and seek help: mobile-first,
+            PeerPal is designed around how people already live and seek help: mobile-first,
             anonymous by default, affordable enough for regular use, and clear about what remains
             free in moments of distress.
           </p>
@@ -328,9 +340,24 @@ function App() {
         </div>
       </section>
 
+      <section className="screens-section">
+        <div className="section-heading" data-reveal>
+          <p className="eyebrow">The app</p>
+          <h2>Built to feel calm when you don't.</h2>
+        </div>
+        <div className="screens-strip" data-reveal>
+          {screens.map((s) => (
+            <div className="screen-frame" key={s.label}>
+              <img src={s.src} alt={s.alt} loading="lazy" />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="faq-section">
         <div className="section-heading" data-reveal>
-          <p className="eyebrow">Questions judges may ask</p>
+          <p className="eyebrow">Common questions</p>
           <h2>Clear boundaries build trust.</h2>
         </div>
         <div className="faq-list" data-reveal>
@@ -341,9 +368,9 @@ function App() {
       </section>
 
       <footer>
-        <div className="brand">MindBridge</div>
+        <div className="brand">PeerPal</div>
         <p>
-          MindBridge is a mental health support platform, not a medical service. In an emergency,
+          PeerPal is a mental health support platform, not a medical service. In an emergency,
           users should contact local emergency services or Befrienders Kenya.
         </p>
       </footer>

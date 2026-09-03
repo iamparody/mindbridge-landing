@@ -221,7 +221,7 @@ function App() {
               ))}
             </div>
             <div className="hero-cta hero-rise delay-5">
-              <a href="app.peer-pal.com" className="btn-primary">Open the app</a>
+              <a href="https://app.peer-pal.com" className="btn-primary">Open the app</a>
             </div>
           </div>
 

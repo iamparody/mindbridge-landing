@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peer-pal.com/sitemap.xml
+Sitemap: https://www.peer-pal.com/sitemap.xml
